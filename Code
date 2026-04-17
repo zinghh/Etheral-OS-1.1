@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# ===== CORES =====
+GREEN="\e[32m"
+CYAN="\e[36m"
+YELLOW="\e[33m"
+RED="\e[31m"
+RESET="\e[0m"
+
+# ===== START =====
+clear
+
+echo -e "${CYAN}========================="
+echo "      ETHERAL OS 1.1"
+echo "=========================${RESET}"
+echo -e "${YELLOW}Made by Zinghh${RESET}"
+echo ""
+
+# ===== LOOP DO SISTEMA =====
+while true; do
+  echo ""
+  read -p "Etheraluser@:~$ " cmd args
+
+  case "$cmd" in
+
+    help)
+      echo -e "${GREEN}Commands:${RESET}"
+      echo " help     - show commands"
+      echo " about    - system info"
+      echo " clear    - clear screen"
+      echo " zingh    - signature"
+      echo " ls       - list fake files"
+      echo " sysinfo  - device info"
+      echo " exit     - shutdown OS"
+      ;;
+
+    about)
+      echo "Etheral OS PRO - running inside Termux"
+      ;;
+
+    clear)
+      clear
+      ;;
+
+    zingh)
+      echo -e "${YELLOW}~~~~~ Z I N G H H ~~~~~${RESET}"
+      ;;
+
+    ls)
+      echo "etheral_core/"
+      echo "system/"
+      echo "user/"
+      echo "boot/"
+      ;;
+
+    sysinfo)
+      echo -e "${GREEN}System Info:${RESET}"
+      uname -a
+      echo "User: $USER"
+      echo "Shell: Bash"
+      ;;
+
+    exit)
+      echo -e "${RED}Shutting down Etheral OS..${RESET}"
+      break
+      ;;
+
+    *)
+      echo -e "${RED}Command not found${RESET}"
+      ;;
+  esac
+done
